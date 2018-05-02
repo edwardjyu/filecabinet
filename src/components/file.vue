@@ -155,23 +155,23 @@ export default {
 .header .option-menu .option-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  justify-content: space-between;
+  padding: 10px 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .header .option-menu .title {
 }
 
 .header .option-menu .close {
-  justify-self: flex-end;
   cursor: pointer;
 }
 
 .header .option-menu .divider {
   margin-left: 10px;
   margin-right: 10px;
-  height: 1;
+  margin-bottom: 4px;
   border-bottom: 1px solid rgb(185, 185, 185);
 }
 
