@@ -8,14 +8,20 @@
           <input type="text" v-model="file.name" @keyup.enter="status.fileNameEdit = false">
         </div>
       </div>
-      <div class="option-aaa" @click="delFile(file.key)">
-        <div class="option">&#8231;&#8231;&#8231;</div>
-        <div class="file-option">
-          <div>Remove</div>
-          <div>Sort</div>
+      <div class="file-option">
+        <div class="option-btn" @click="status.openFileOption=true">&#8231;&#8231;&#8231;</div>
+        <div class="option-menu" v-if="status.openFileOption">
+          <div class="option-header">
+            <div class="title">Options</div>
+            <div class="close" @click="status.openFileOption=false">&times;</div>
+          </div>
+          <div class="divider"></div>
+          <div class="option-list">
+            <div>Remove</div>
+            <div>Sort</div>
+          </div>
         </div>
       </div>
-
     </div>
     <!-- items -->
     <div class='items'>
@@ -51,7 +57,8 @@ export default {
     return {
       status: {
         fileNameEdit: false,
-        newItemEdit: false
+        newItemEdit: false,
+        openFileOption: false
       },
       newItem: ''
     }
@@ -119,7 +126,7 @@ export default {
   box-shadow: 0 0 2px 0 #0284c6;
 }
 
-.header .option {
+.header .option-btn {
   padding: 2px 4px;
   margin-right: 5px;
   color: #444;
@@ -129,22 +136,52 @@ export default {
   position: relative;
 }
 
-.header .option:hover {
+.header .option-btn:hover {
   background-color: #cdd2d4;
 }
 
-.header .file-option {
+.header .option-menu {
   display: flex;
   flex-direction: column;
   position: absolute;
-  padding: 5px 5px;
-  background-color: #e2e4e6;
+  padding: 0;
+  margin: 0;
+  border-radius: 3px;
+  background-color: white;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.header .file-option div:hover {
-  background-color: white;
+.header .option-menu .option-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header .option-menu .title {
+}
+
+.header .option-menu .close {
+  justify-self: flex-end;
+  cursor: pointer;
+}
+
+.header .option-menu .divider {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 1;
+  border-bottom: 1px solid rgb(185, 185, 185);
+}
+
+.header .option-menu .option-list div {
+  padding: 7px 20px;
+}
+
+.header .option-menu .option-list div:hover  {
+  background-color: #5aac44;
+  color: white;
 }
 
 .items {
