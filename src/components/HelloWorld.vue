@@ -12,11 +12,13 @@
 </template>
 
 <script>
-import File from '@/components/file'
+import File from '@/components/File'
 
 export default {
   name: 'HelloWorld',
-  components: {'file': File},
+  components: {
+    'file': File
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',

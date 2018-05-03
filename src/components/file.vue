@@ -47,8 +47,13 @@
 </template>
 
 <script>
+import ItemBrowser from '@/components/ItemBrowser'
+
 export default {
   name: 'file',
+  components: {
+    'item-browser': ItemBrowser
+  },
   props: {
     file: null,
     items: []

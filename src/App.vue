@@ -15,6 +15,6 @@ body {
   margin: 0;
   padding: 0;
   font-size: 14px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 </style>
